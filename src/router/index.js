@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Signup from "../views/users/Signup.vue";
 import Login from "../views/users/Login.vue";
 import Logout from "../views/users/Logout.vue";
+import WorkoutsIndex from "../views/workouts/Index.vue";
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout
+  },
+  {
+    path: "/workouts/index",
+    name: "workouts-index",
+    component: WorkoutsIndex
   },
 
 ];
