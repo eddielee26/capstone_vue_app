@@ -7,6 +7,7 @@ import Logout from "../views/users/Logout.vue";
 import WorkoutsIndex from "../views/workouts/Index.vue";
 import WorkoutsNew from "../views/workouts/New.vue";
 import WorkoutsShow from "../views/workouts/Show.vue";
+import WorkoutsEdit from "../views/workouts/Edit.vue";
 
 Vue.use(VueRouter);
 
@@ -53,7 +54,12 @@ const routes = [
     path: "/workouts/:id",
     name: "workouts-show",
     component: WorkoutsShow
-  }
+  },
+  {
+    path: "/workouts/:id/edit",
+    name: "workouts-edit",
+    component: WorkoutsEdit
+  },
 
 ];
 
