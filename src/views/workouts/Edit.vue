@@ -23,8 +23,11 @@
         <label>Note:</label> 
         <input type="text" class="form-control" v-model="workout.note">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-primary" value="Edit">
     </form>
+    <div>
+      <button v-on:click="destroyWorkout()">Destroy</button>
+    </div>
 
   </div>
 </template>
@@ -61,6 +64,13 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
+    destroyWorkout: function() {
+      axios.delete("/api/workouts/" + this.workout.id)
+        .then(response => {
+          console.log("Success", response.data);
+          this.$router.push("/workouts");
+        });
+    }
   }
 };
 </script>
