@@ -8,7 +8,7 @@
     <p>bio: {{ user.bio }}</p>
     <p>misc_info: {{ user.misc_info }}</p>
 
-    <router-link v-bind:to="`/users/${user.id}/edit`">Edit</router-link>
+    <router-link v-bind:to="`/users/${user_id}/edit`">Edit</router-link>
 
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   data: function() {
     return {
       user: {},
+      user_id: localStorage.getItem("user_id"),
     };
   },
   created: function() {
