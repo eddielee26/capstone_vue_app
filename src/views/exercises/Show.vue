@@ -10,6 +10,8 @@
     <p>Note: {{ exercise.video }}</p>
     <p>Note: {{ exercise.muscle_group }}</p>
 
+    <router-link v-bind:to="`/exercises/${exercise.id}/edit`">Edit</router-link>
+
   </div>
 </template>
 
