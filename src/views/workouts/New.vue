@@ -23,6 +23,15 @@
         <label>Note:</label> 
         <input type="text" class="form-control" v-model="note">
       </div>
+
+      <div v-for="exercise in exercises">
+        <input type="checkbox" :id="exercise.id" :value="exercise.id" v-model="exerciseIds">
+        <label :for="exercise.id">{{exercise.name}}</label>
+
+      </div>
+
+      {{ exerciseIds }}
+
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
 
@@ -39,9 +48,15 @@ export default {
       category: "",
       note: "",
       errors: [],
+      exercises: [],
+      exerciseIds: [],
     };
   },
   created: function() {
+    axios.get("/api/exercises").then(response => {
+      this.exercises = response.data;
+      console.log(this.exercises);
+    });
   },
   methods: {
     submit: function() {
@@ -50,6 +65,7 @@ export default {
         date: this.date,
         category: this.category,
         note: this.note,
+        exercise_ids: this.exerciseIds
       };
       axios
         .post("/api/workouts", params)

@@ -7,6 +7,12 @@
     <p>Category: {{ workout.category }}</p>
     <p>Note: {{ workout.note }}</p>
 
+    <div v-for="exercise in workout.exercises">
+      {{ exercise.name }}
+      {{ exercise.sets }}
+      {{ exercise.reps }}
+    </div>
+
     <router-link v-bind:to="`/workouts/${workout.id}/edit`">Edit</router-link>
 
   </div>
