@@ -6,7 +6,7 @@
       <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> |
       <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
-      <router-link v-if="isLoggedIn()" :to="`/users/${user_id}`">My Profile</router-link> |
+      <router-link v-if="isLoggedIn()" :to="`/users/${getUserInfo().userId}`">My Profile</router-link> |
       <router-link to="/workouts">Workouts Index</router-link> |
       <router-link to="/exercises">Exercises Index</router-link> |
       <router-link to="/exercises/new">Exercises New</router-link> |
@@ -20,7 +20,7 @@
 export default {
   data: function() {
     return {
-      user_id: localStorage.getItem("user_id")
+      
     };
   },
   methods: {
@@ -30,6 +30,11 @@ export default {
       } else {
         return false;
       }
+    },
+    getUserInfo: function() {
+      return {
+        userId: localStorage.getItem("user_id")
+      };
     }
   }
 };
