@@ -4,16 +4,18 @@
     <div v-for="exercise in exercises">
 
       <router-link v-bind:to="`/exercises/${exercise.id}`">
-        <h2>Name: {{ exercise.name }}</h2>
+        <h2>{{ exercise.name }}</h2>
       </router-link>
 
       <p>Sets: {{ exercise.sets }}</p>
       <p>Reps: {{ exercise.reps }}</p>
-      <p>Weight: {{ exercise.weight }}</p>
-      <p>Image: {{ exercise.iamge }}</p>
-      <p>Video: {{ exercise.Video }}</p>
-      <p>Muscle Group: {{ exercise.muscle_group }}</p>
+      <p>Weight (lbs): {{ exercise.weight }}</p>
+      <p v-if="exercise.image">Image: {{ exercise.image }}</p>
+      <p v-if="exercise.video">Video: {{ exercise.video }}</p>
+      <p v-if="exercise.muscle_group">Muscle Group: {{ exercise.muscle_group }}</p>
     </div>
+
+    <router-link v-bind:to="`/exercises/new`">New Exercise</router-link>
 
   </div>
 </template>

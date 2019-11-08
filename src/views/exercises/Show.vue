@@ -6,9 +6,9 @@
     <p>Date: {{ exercise.sets }}</p>
     <p>Category: {{ exercise.reps }}</p>
     <p>Note: {{ exercise.weight }}</p>
-    <p>Note: {{ exercise.image }}</p>
-    <p>Note: {{ exercise.video }}</p>
-    <p>Note: {{ exercise.muscle_group }}</p>
+    <p v-if="exercise.image">Image: {{ exercise.image }}</p>
+    <p v-if="exercise.video">Video: {{ exercise.video }}</p>
+    <p v-if="exercise.muscle_group">Muscle Group: {{ exercise.muscle_group }}</p>
 
     <router-link v-bind:to="`/exercises/${exercise.id}/edit`">Edit</router-link>
 

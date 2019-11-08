@@ -14,7 +14,7 @@
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password">
         </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="submit" class="btn btn-primary" value="Login">
       </form>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default {
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("user_id", response.data.user_id);
-          this.$router.push("/");
+          this.$router.push("/workouts");
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];

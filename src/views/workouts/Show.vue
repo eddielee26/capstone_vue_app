@@ -11,9 +11,11 @@
       {{ exercise.name }}
       {{ exercise.sets }}
       {{ exercise.reps }}
+      {{ exercise.weight }}
     </div>
 
-    <router-link v-bind:to="`/workouts/${workout.id}/edit`">Edit</router-link>
+    <br>
+    <router-link v-bind:to="`/workouts/${workout.id}/edit`">Edit Workout</router-link>
 
   </div>
 </template>

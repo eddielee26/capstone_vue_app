@@ -4,7 +4,7 @@
     <div v-for="workout in workouts">
 
       <router-link v-bind:to="`/workouts/${workout.id}`">
-        <h2>Name: {{ workout.name }}</h2>
+        <h2>{{ workout.name }}</h2>
       </router-link>
 
       <p>Date: {{ workout.date }}</p>
@@ -22,7 +22,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      workouts: []
+      workouts: {},
     };
   },
   created: function() {

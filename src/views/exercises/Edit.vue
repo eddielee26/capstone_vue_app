@@ -3,7 +3,7 @@
     <h1>Exercises Edit</h1>
 
     <form v-on:submit.prevent="submit()">
-      <h1>New Exercise</h1>
+      <h1>Edit Exercise</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
@@ -35,7 +35,7 @@
         <label>Muscle Group:</label> 
         <input type="text" class="form-control" v-model="exercise.muscle_group">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-primary" value="Update Exercise">
     </form>
 
     <div>
@@ -64,9 +64,12 @@ export default {
     submit: function() {
       var params = {
         name: this.exercise.name,
-        date: this.exercise.date,
-        category: this.exercise.category,
-        note: this.exercise.note,
+        sets: this.exercise.sets,
+        reps: this.exercise.reps,
+        weight: this.exercise.weight,
+        image: this.exercise.image,
+        video: this.exercise.video,
+        muscle_group: this.exercise.muscle_group,
       };
       axios
         .patch("/api/exercises/" + this.exercise.id, params)
