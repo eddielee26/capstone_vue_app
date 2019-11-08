@@ -9,7 +9,7 @@
 
       <p>Date: {{ workout.date }}</p>
       <p>Category: {{ workout.category }}</p>
-      <p>Note: {{ workout.note }}</p><br>
+      <p v-if="workout.note">Note: {{ workout.note }}</p><br>
     </div>
 
     <router-link v-bind:to="`/workouts/new`">New Workout</router-link>

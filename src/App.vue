@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> |
-      <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> |
-      <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
       <router-link v-if="isLoggedIn()" :to="`/users/${getUserInfo().userId}`">My Profile</router-link> |
+      <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> |
+      <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> 
+      <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
       <router-link to="/workouts">Workouts Index</router-link> |
       <router-link to="/exercises">Exercises Index</router-link> |
 

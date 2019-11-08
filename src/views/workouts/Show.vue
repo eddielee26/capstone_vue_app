@@ -5,13 +5,16 @@
     <h2>{{ workout.name }}</h2>
     <p>Date: {{ workout.date }}</p>
     <p>Category: {{ workout.category }}</p>
-    <p>Note: {{ workout.note }}</p>
+    <p v-if="workout.note">Note: {{ workout.note }}</p><br>
 
+    <h3>Exercises</h3>
     <div v-for="exercise in workout.exercises">
-      {{ exercise.name }}
-      {{ exercise.sets }}
-      {{ exercise.reps }}
-      {{ exercise.weight }}
+      <h4>{{ exercise.name }}</h4>
+      <p>
+      Sets: {{ exercise.sets }}
+      Reps: {{ exercise.reps }}
+      Weight: {{ exercise.weight }}
+      </p>
     </div>
 
     <br>
