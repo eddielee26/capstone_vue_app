@@ -1,6 +1,55 @@
 <template>
   <div class="users-show">
-    <h1>User Show</h1>
+
+    <!-- ===========================
+    =====>> Page Hero <<===== -->
+    <section id="page-hero" class="about-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-title text-center">
+              <h1>My <span>Profile</span></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====>> End Page Hero <<===== 
+    =========================== -->
+
+    <!-- ===========================
+    =====>> Trainers Single <<===== -->
+    <section id="trainers-single-area" class="pt-150">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-5">
+            <div class="trainers-single-img">
+              <img src="/assets/img/team/1.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1 col-md-7 offset-md-0">
+            <div class="trainers-single-text">
+              <h2>{{ user.name }}</h2>
+              <h6>Fitness & Body</h6>
+              <p>Over 50 group training sessions per week There is no one type or way in our diverse community Alienum phaedrum torquatos nec eu. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent
+              per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum</p>
+
+              <div class="trainers-information">
+                <ul>
+                  <li><span>Experience</span> : 5 Years</li>
+                  <li><span>Age</span> : 35</li>
+                  <li><span>Weight</span> : 60 kg</li>
+                  <li><span>Phone</span> : +1 234 45456 654</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====>> End Trainers Single <<===== 
+    =========================== -->
+
 
     <h2>{{ user.name }}</h2>
     <p>Email: {{ user.email }}</p>
@@ -13,14 +62,9 @@
     <div id="container" style="width:100%; height:400px;"></div>
     
     <input type="number" v-model="benchWeight">
-
-    <form v-on:submit.prevent="submit()">
-      <div class="form-group">
-        <label>Bench weight</label> 
-        <input type="number" class="form-control" v-model="benchWeight">
-      </div>
-      <input type="submit" class="btn btn-primary" value="Add Bench Weight"><br><br>
-    </form>
+    <input type="number" v-model="squatWeight">
+    <input type="number" v-model="deadliftWeight">
+    <button v-on:click="chartUpdate()">Add Weights</button>
 
   </div>
 
@@ -73,9 +117,10 @@ export default {
     return {
       user: {},
       user_id: localStorage.getItem("user_id"),
-      benchWeight: "",
-      squatWeight: "",
-      deadliftWeight: "",
+      benchWeight: 0,
+      squatWeight: 0,
+      deadliftWeight: 0,
+      chart: ""
     };
   },
   created: function() {
@@ -85,7 +130,7 @@ export default {
     });
   },
   mounted: function() {
-    Highcharts.chart('container', {
+    this.chart=Highcharts.chart('container', {
       chart: {
         type: 'column'
       },
@@ -130,7 +175,7 @@ export default {
       [
         {
           name: 'Bench',
-          data: [this.benchWeight]
+          data: [0]
 
         }, {
           name: 'Bench Estimate',
@@ -156,6 +201,41 @@ export default {
     });
   },
   methods: {
+    chartUpdate: function() {
+      console.log(this.chart)
+      console.log(this.benchWeight)
+      var bench = parseInt(this.benchWeight)
+      var squat = parseInt(this.squatWeight)
+      var deadlift = parseInt(this.deadliftWeight)
+      this.chart.update({
+        series: [
+        {
+          name: 'Bench',
+          data: [bench]
+
+        }, {
+          name: 'Bench Estimate',
+          data: [bench + 10]
+
+        }, {
+          name: 'Squat',
+          data: [squat]
+
+        }, {
+          name: 'Squat Estimate',
+          data: [265]
+
+        }, {
+          name: 'Deadlift',
+          data: [deadlift]
+
+        }, {
+          name: 'Deadlift Estimate',
+          data: [315]
+
+        }],
+      })
+    }
   },
 };
 </script>
