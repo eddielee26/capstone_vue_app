@@ -116,29 +116,29 @@
   </div>
 </template>
 
-    <script>
-      export default {
-        data: function() {
-          return {
+<script>
+export default {
+  data: function() {
+    return {
 
-          };
-        },
-        methods: {
-          isLoggedIn: function() {
-            if (localStorage.getItem("jwt")) {
-              return true;
-            } else {
-              return false;
-            }
-          },
-          getUserInfo: function() {
-            return {
-              userId: localStorage.getItem("user_id")
-            };
-          }
-        }
+    };
+  },
+  methods: {
+    isLoggedIn: function() {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserInfo: function() {
+      return {
+        userId: localStorage.getItem("user_id")
       };
-    </script>
+    }
+  }
+};
+</script>
 
     <style>
     #app {
