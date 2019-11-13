@@ -21,9 +21,6 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-2">
-                <div class="logo">
-                  <a href="index-1.html"><img src="/assets/img/logo.png" alt="logo"></a>
-                </div>
               </div>
               <div class="col-lg-7 col-md-12">
                 <div id="head-mobile"></div>

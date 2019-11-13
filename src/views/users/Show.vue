@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title text-center">
-              <h1>My <span>Profile</span></h1>
+              <h1>MY<span>PROFILE</span></h1>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
                   <li><span>Phone</span> : {{ user.phone_number }}</li>
                   <li><span>Miscellaneous info</span> : {{ user.misc_info }}</li>
                 </ul><br>
-                <router-link v-bind:to="`/users/${user_id}/edit`">Update Info</router-link>
+                <router-link v-bind:to="`/users/${user_id}/edit`" class="btn btn-primary">Update Info</router-link>
               </div>
             </div>
           </div>
@@ -59,11 +59,35 @@
 <!--     <router-link v-bind:to="`/users/${user_id}/edit`">Edit</router-link> -->
 
     <div id="container" style="width:100%; height:400px;"></div>
+
+    <section id="my-account-area" class="pt-50 pb-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="my-account-content">
+              <div class="form-group">
+                <label>Bench</label> 
+                <input type="number" v-model="benchWeight">
+              </div>
+              <div class="form-group">
+                <label>Squat</label>
+                <input type="number" v-model="squatWeight">
+              </div>
+              <div class="form-group">
+                <label>Deadlift</label>
+                <input type="number" v-model="deadliftWeight">
+              </div>
+              <button v-on:click="chartUpdate()" class="btn btn-primary">Add Weights</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
-    Bench Weight <input type="number" v-model="benchWeight"><br>
+<!--     Bench Weight <input type="number" v-model="benchWeight"><br>
     Squat Weight <input type="number" v-model="squatWeight"><br>
     Deadlift Weight <input type="number" v-model="deadliftWeight"><br>
-    <button v-on:click="chartUpdate()">Add Weights</button>
+    <button v-on:click="chartUpdate()">Add Weights</button> -->
 
   </div>
 
