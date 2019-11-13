@@ -60,6 +60,23 @@
 
     <div id="container" style="width:100%; height:400px;"></div>
 
+<!--     <section id="contact-area" class="pt-150 pb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+                <div class="col-lg-8">
+                    <form class="contact-box">
+                        <input type="number" v-model="benchWeight" placeholder="Bench">
+                        <input type="number" v-model="squatWeight" placeholder="Squat">
+                        <input type="number" v-model="deadliftWeight" placeholder="Deadlift">
+                        <button v-on:click="chartUpdate()" class="btn btn-7">Add Weights</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
     <section id="my-account-area" class="pt-50 pb-50">
       <div class="container">
         <div class="row">
