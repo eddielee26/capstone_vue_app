@@ -30,17 +30,16 @@
           <div class="col-lg-7 offset-lg-1 col-md-7 offset-md-0">
             <div class="trainers-single-text">
               <h2>{{ user.name }}</h2>
-              <h6>Fitness & Body</h6>
-              <p>Over 50 group training sessions per week There is no one type or way in our diverse community Alienum phaedrum torquatos nec eu. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent
-              per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum</p>
+<!--               <h6>Fitness & Body</h6> -->
+              <p>{{ user.bio }}</p>
 
               <div class="trainers-information">
                 <ul>
-                  <li><span>Experience</span> : 5 Years</li>
-                  <li><span>Age</span> : 35</li>
-                  <li><span>Weight</span> : 60 kg</li>
-                  <li><span>Phone</span> : +1 234 45456 654</li>
-                </ul>
+                  <li><span>Email</span> : {{ user.email }}</li>
+                  <li><span>Phone</span> : {{ user.phone_number }}</li>
+                  <li><span>Miscellaneous info</span> : {{ user.misc_info }}</li>
+                </ul><br>
+                <router-link v-bind:to="`/users/${user_id}/edit`">Update Info</router-link>
               </div>
             </div>
           </div>
@@ -51,19 +50,19 @@
     =========================== -->
 
 
-    <h2>{{ user.name }}</h2>
+<!--     <h2>{{ user.name }}</h2>
     <p>Email: {{ user.email }}</p>
-    <p>phone_number: {{ user.phone_number }}</p>
-    <p>bio: {{ user.bio }}</p>
-    <p>misc_info: {{ user.misc_info }}</p>
+    <p>Phone Number: {{ user.phone_number }}</p>
+    <p>Bio: {{ user.bio }}</p>
+    <p>Misc Info: {{ user.misc_info }}</p> -->
 
-    <router-link v-bind:to="`/users/${user_id}/edit`">Edit</router-link>
+<!--     <router-link v-bind:to="`/users/${user_id}/edit`">Edit</router-link> -->
 
     <div id="container" style="width:100%; height:400px;"></div>
     
-    <input type="number" v-model="benchWeight">
-    <input type="number" v-model="squatWeight">
-    <input type="number" v-model="deadliftWeight">
+    Bench Weight <input type="number" v-model="benchWeight"><br>
+    Squat Weight <input type="number" v-model="squatWeight"><br>
+    Deadlift Weight <input type="number" v-model="deadliftWeight"><br>
     <button v-on:click="chartUpdate()">Add Weights</button>
 
   </div>
@@ -130,7 +129,7 @@ export default {
     });
   },
   mounted: function() {
-    this.chart=Highcharts.chart('container', {
+    this.chart = Highcharts.chart('container', {
       chart: {
         type: 'column'
       },
@@ -175,7 +174,7 @@ export default {
       [
         {
           name: 'Bench',
-          data: [0]
+          data: [155]
 
         }, {
           name: 'Bench Estimate',
@@ -202,39 +201,39 @@ export default {
   },
   methods: {
     chartUpdate: function() {
-      console.log(this.chart)
-      console.log(this.benchWeight)
-      var bench = parseInt(this.benchWeight)
-      var squat = parseInt(this.squatWeight)
-      var deadlift = parseInt(this.deadliftWeight)
+      console.log(this.chart);
+      console.log(this.benchWeight);
+      var bench = parseInt(this.benchWeight);
+      var squat = parseInt(this.squatWeight);
+      var deadlift = parseInt(this.deadliftWeight);
       this.chart.update({
         series: [
-        {
-          name: 'Bench',
-          data: [bench]
+          {
+            name: 'Bench',
+            data: [bench]
 
-        }, {
-          name: 'Bench Estimate',
-          data: [bench + 10]
+          }, {
+            name: 'Bench Estimate',
+            data: [bench + 5]
 
-        }, {
-          name: 'Squat',
-          data: [squat]
+          }, {
+            name: 'Squat',
+            data: [squat]
 
-        }, {
-          name: 'Squat Estimate',
-          data: [265]
+          }, {
+            name: 'Squat Estimate',
+            data: [squat + 10]
 
-        }, {
-          name: 'Deadlift',
-          data: [deadlift]
+          }, {
+            name: 'Deadlift',
+            data: [deadlift]
 
-        }, {
-          name: 'Deadlift Estimate',
-          data: [315]
+          }, {
+            name: 'Deadlift Estimate',
+            data: [deadlift + 15]
 
-        }],
-      })
+          }],
+      });
     }
   },
 };

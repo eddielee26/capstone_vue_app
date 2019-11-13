@@ -29,7 +29,7 @@
                 <div id="head-mobile"></div>
                 <div class="button"></div>
                 <ul class="navbar-nav">
-                  <li><router-link v-if="isLoggedIn()" :to="`/users/${getUserInfo().userId}`">My Profile</router-link></li>
+                  <li><router-link v-if="isLoggedIn()" :to="`/users/${getUserInfo().userId}`">MY PROFILE</router-link></li>
                   <li><router-link to="/workouts">WORKOUTS</router-link></li>
                   <li><router-link to="/exercises">EXERCISES</router-link></li>
                   <li><router-link v-if="!isLoggedIn()" to="/login">LOGIN</router-link></li>
