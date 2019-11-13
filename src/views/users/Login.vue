@@ -24,20 +24,22 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="my-account-content">
-                        <h2>Login</h2><br><br>
-                        <form v-on:submit.prevent="submit()">
-                          <ul>
-                            <li class="text-danger" v-for="error in errors">{{ error }}</li>
-                          </ul>
-                          <div class="form-group">
-                            <label>Email:</label>
-                            <input type="email" class="form-control" v-model="email">
-                          </div>
-                          <div class="form-group">
-                            <label>Password:</label>
-                            <input type="password" class="form-control" v-model="password">
-                          </div>
-                          <input type="submit" class="btn btn-primary" value="Login">
+                        <h2>Login</h2>
+                        <form class="my-account-form">
+                            <form v-on:submit.prevent="submit()">
+                              <ul>
+                                <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                              </ul>
+                              <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" class="form-control" v-model="email">
+                              </div>
+                              <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" v-model="password">
+                              </div>
+                              <button type="submit" class="btn btn-primary" value="Login">Log In</button>
+                            </form>
                         </form>
                     </div>
                 </div>
