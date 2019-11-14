@@ -179,11 +179,11 @@ export default {
       xAxis: {
         categories: [
           'Bench',
-          'Bench Estimate',
+          // 'Bench Estimate',
           'Squat',
-          'Squat Estimate',
+          // 'Squat Estimate',
           'Deadlift',
-          'Deadlift Estimate',
+          // 'Deadlift Estimate',
         ],
         crosshair: true
       },
@@ -255,27 +255,33 @@ export default {
             name: 'Bench',
             data: [bench]
 
-          }, {
-            name: 'Bench Estimate',
-            data: [bench + 5]
+          }, 
+          // {
+          //   name: 'Bench Estimate',
+          //   data: [bench + 5]
 
-          }, {
+          // }, 
+          {
             name: 'Squat',
             data: [squat]
 
-          }, {
-            name: 'Squat Estimate',
-            data: [squat + 10]
+          }, 
+          // {
+          //   name: 'Squat Estimate',
+          //   data: [squat + 10]
 
-          }, {
+          // }, 
+          {
             name: 'Deadlift',
             data: [deadlift]
 
-          }, {
-            name: 'Deadlift Estimate',
-            data: [deadlift + 15]
+          }, 
+          // {
+          //   name: 'Deadlift Estimate',
+          //   data: [deadlift + 15]
 
-          }],
+          // },
+        ],
       });
     }
   },
