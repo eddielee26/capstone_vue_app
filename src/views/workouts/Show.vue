@@ -1,5 +1,40 @@
 <template>
   <div class="workouts-show">
+
+    <!-- ===========================
+    =====>> Page Hero <<===== -->
+    <section id="page-hero" class="about-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-title text-center">
+              <h1>{{workout.name}}<span>WORKOUT</span></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====>> End Page Hero <<===== 
+    =========================== -->
+
+    <!-- ===========================
+    =====>> TTM <<===== -->
+    <section id="ttm-area" class="ttm-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 offset-md-4 p-0">
+            <div class="ttm-item">
+              <h4>Cardio treadmill</h4>
+              <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized .</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =====>> End TTM <<===== 
+    =========================== -->
+
     <h1>Workout Show</h1>
 
     <h2>{{ workout.name }}</h2>

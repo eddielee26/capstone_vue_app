@@ -60,24 +60,20 @@
 
     <div id="container" style="width:100%; height:400px;"></div>
 
-<!--     <section id="contact-area" class="pt-150 pb-150">
+    <section id="contact-area" class="pt-25 pb-25">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                </div>
                 <div class="col-lg-8">
-                    <form class="contact-box">
-                        <input type="number" v-model="benchWeight" placeholder="Bench">
-                        <input type="number" v-model="squatWeight" placeholder="Squat">
-                        <input type="number" v-model="deadliftWeight" placeholder="Deadlift">
-                        <button v-on:click="chartUpdate()" class="btn btn-7">Add Weights</button>
-                    </form>
+                  <label>Bench </label><br><input type="number" v-model="benchWeight"><br><br>
+                  <label>Squat </label><br><input type="number" v-model="squatWeight"><br><br>
+                  <label>Deadlift </label><br><input type="number" v-model="deadliftWeight"><br><br>
+                  <button v-on:click="chartUpdate()" class="btn btn-7">Add Weights</button>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <section id="my-account-area" class="pt-50 pb-50">
+<!--     <section id="my-account-area" class="pt-50 pb-50">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
@@ -99,7 +95,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     
 <!--     Bench Weight <input type="number" v-model="benchWeight"><br>
     Squat Weight <input type="number" v-model="squatWeight"><br>
@@ -217,27 +213,33 @@ export default {
           name: 'Bench',
           data: [155]
 
-        }, {
-          name: 'Bench Estimate',
-          data: [170]
+        }, 
+        // {
+        //   name: 'Bench Estimate',
+        //   data: [170]
 
-        }, {
+        // }, 
+        {
           name: 'Squat',
           data: [240]
 
-        }, {
-          name: 'Squat Estimate',
-          data: [265]
+        }, 
+        // {
+        //   name: 'Squat Estimate',
+        //   data: [265]
 
-        }, {
+        // }, 
+        {
           name: 'Deadlift',
           data: [295]
 
-        }, {
-          name: 'Deadlift Estimate',
-          data: [315]
+        }, 
+        // {
+        //   name: 'Deadlift Estimate',
+        //   data: [315]
 
-        }],
+        // }
+      ],
     });
   },
   methods: {
