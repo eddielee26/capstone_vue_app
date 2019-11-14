@@ -19,13 +19,13 @@
 
     <!-- ===========================
     =====>> My Account <<===== -->
-    <section id="my-account-area" class="pt-150 pb-150">
+    <section id="my-account-area" class="pt-25 pb-25">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="my-account-content">
                         <form class="my-account-form">
-                          <h2>Create Workout</h2>
+                          <h2>Create Workout</h2><br>
                            <form v-on:submit.prevent="submit()">
                              <ul>
                                <li class="text-danger" v-for="error in errors">{{ error }}</li>
