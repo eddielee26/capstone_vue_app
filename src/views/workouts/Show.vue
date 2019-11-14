@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title text-center">
-              <h1>{{workout.name}}<span>WORKOUT</span></h1>
+              <h1>{{workout.name}} <span>WORKOUT</span></h1>
             </div>
           </div>
         </div>
@@ -24,9 +24,9 @@
         <div class="row">
           <div class="col-md-4 offset-md-4 p-0">
             <div class="ttm-item">
-              <h4>Cardio treadmill</h4>
-              <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized .</p>
-
+              <h4>{{ workout.date }}</h4>
+              <p>{{ workout.category }}</p><br>
+              <p v-if="workout.note">{{ workout.note }}</p>
             </div>
           </div>
         </div>
@@ -35,7 +35,36 @@
     <!-- =====>> End TTM <<===== 
     =========================== -->
 
-    <h1>Workout Show</h1>
+    <!-- ===========================
+    =====>> Fitner <<===== -->
+    <section id="fitner-area" class="pt-25">
+        <div class="container">
+            <div class="fitner-content pt-25 ">
+                <div class="row ">
+                  <div v-for="exercise in workout.exercises">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <!-- fitner item -->
+                        <div class="fitner-item fitner-border mt-40">
+                            <h2>{{ exercise.name }}</h2>
+                            <p>SETS {{ exercise.sets }}</p>
+                            <p>REPS {{ exercise.reps }}</p>
+                            <p>WEIGHT {{ exercise.weight }}</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-lg-center">
+                <div class="cta-btn ">
+                  <router-link v-bind:to="`/workouts/${workout.id}/edit`" class="btn btn-1">Edit Workout</router-link>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- =====>> End Fitner <<===== 
+    =========================== -->
+
+<!--     <h1>Workout Show</h1>
 
     <h2>{{ workout.name }}</h2>
     <p>Date: {{ workout.date }}</p>
@@ -53,7 +82,7 @@
     </div>
 
     <br>
-    <router-link v-bind:to="`/workouts/${workout.id}/edit`">Edit Workout</router-link>
+    <router-link v-bind:to="`/workouts/${workout.id}/edit`">Edit Workout</router-link> -->
 
   </div>
 </template>

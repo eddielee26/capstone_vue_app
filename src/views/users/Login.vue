@@ -24,9 +24,9 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="my-account-content">
-                        <h2>Login</h2>
                         <form class="my-account-form">
                             <form v-on:submit.prevent="submit()">
+                              <h2>Login</h2><br><br>
                               <ul>
                                 <li class="text-danger" v-for="error in errors">{{ error }}</li>
                               </ul>

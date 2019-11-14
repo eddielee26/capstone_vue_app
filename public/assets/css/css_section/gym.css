@@ -789,6 +789,11 @@ Class name automatically added to element */
 
 .pricing-item-right ul li {
     padding-bottom: 27px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
 }
 
 .pricing-item-right ul li a {
