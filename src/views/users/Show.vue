@@ -39,7 +39,7 @@
                   <li><span>Phone</span> : {{ user.phone_number }}</li>
                   <li><span>Miscellaneous info</span> : {{ user.misc_info }}</li>
                 </ul><br>
-                <router-link v-bind:to="`/users/${user_id}/edit`" class="btn btn-primary">Update Info</router-link>
+                <router-link v-bind:to="`/users/${user_id}/edit`" class="btn btn-7">Update Info</router-link><br>
               </div>
             </div>
           </div>

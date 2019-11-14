@@ -55,7 +55,7 @@
                             <section id="contact-area" class="pt-25 pb-25">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-4 offset-md-5 p-0">
+                                        <div class="col text-center">
                                           <button v-on:click="destroyUser()" class="btn btn-7">Delete User</button>
                                         </div>
                                     </div>

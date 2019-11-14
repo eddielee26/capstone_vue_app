@@ -2242,6 +2242,7 @@ ul.bmi-tabs li.current {
     font-size: 14px;
     font-weight: 600;
     padding: 10px 25px;
+    text-align: center;
 }
 
 .my-account-form .wrapper {
