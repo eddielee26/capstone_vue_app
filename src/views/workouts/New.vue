@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title text-center">
-              <h1>NEW<span>WORKOUT</span></h1>
+              <h1>CREATE<span>WORKOUT</span></h1>
             </div>
           </div>
         </div>
@@ -25,6 +25,7 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="my-account-content">
                         <form class="my-account-form">
+                          <h2>Create Workout</h2>
                            <form v-on:submit.prevent="submit()">
                              <ul>
                                <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -46,7 +47,7 @@
                               <form class="shop-single-form">
                                   <div class="wrapper">
                                     <input type="checkbox" :id="exercise.id" :value="exercise.id" v-model="exerciseIds">
-                                    <label :for="exercise.id">{{exercise.name}}</label>
+                                    <label :for="exercise.id">{{ exercise.name }}</label>
                                   </div>
                               </form>
                              </div>
